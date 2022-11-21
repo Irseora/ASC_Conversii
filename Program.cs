@@ -8,13 +8,13 @@ namespace Conversii
 {
     class Program
     {
-        // Valoarea care trebuie scazuta dintr-o litera, care reprezinta o cifra intr-o baza > 10, pt. a-i afla valoarea
-        const int valoareDeScazutLitera = 55;
-
-        // Valoarea care trebuie scazuta din valoarea ASCII a unei cifre pt. a obtine cifra
-        const int valoareDeScazutCifra = '0';
+        // Valorile care trebuie scazute dintr-o litera, respectiv o cifra,
+        // pt. a obtine valoare lor numerica
+        const int valoareDeScazutDinLitera = 31;
+        const int valoareDeScazutDinCifra = 30;
 
         // Citeste un numar intreg din intervalul [2,16] care reprezinta o baza
+        // nrBazei = a cata baza citeste (1/2)
         static int CitesteBaza(int nrBazei)
         {
             Console.Write($"Introduceti baza {nrBazei}: ");
@@ -62,29 +62,39 @@ namespace Conversii
             return input;
         }
 
-        // TODO: fractii periodice
-        // Converteste un numar din baza b in baza 10
-        static double ConvBazaBInBaza10(int b, string nrB)
+        // Converteste un numar intreg din baza b in baza 10
+        static int ConvertBazaBInBaza10Intreg(int baza, string numarInBazaB)
         {
-            double nr10 = 0;
-            int pozVirgula = nrB.IndexOf('.');
+            int numarInBaza10 = 0;
+            int putereB = 1;
 
-            // Daca nu are parte fractionara
-            if (pozVirgula == -1)
-                pozVirgula = nrB.Length;
-            
-            // Converteste partea intreaga a numarului
-            int putereBInt = 1;
-            for (int i = pozVirgula-1; i >= 0; i--)
+            for (int i = numarInBazaB.Length - 1; i >= 0; i--)
             {
-                if (nrB[i] >= 65 && nrB[i] <= 70)
-                    nr10 += (nrB[i] - valoareDeScazutLitera) * putereBInt;
+                if (numarInBazaB[i] >= 'A' && numarInBazaB[i] <= 'F')
+                    numarInBaza10 += (numarInBazaB[i] - valoareDeScazutDinLitera) * putereB;
                 else
-                    nr10 += (nrB[i] - valoareDeScazutCifra) * putereBInt;
+                    numarInBaza10 += (numarInBazaB[i] - valoareDeScazutDinCifra) * putereB;
 
-                putereBInt *= b;
+                putereB *= baza;
             }
 
+            return numarInBaza10;
+        }
+
+        // Converteste partea fractionara a unui numar din baza b in baza 10
+        static double ConvertBazaBInBaza10Fractionar(int baza, string numarInBazaB)
+        {
+            double numarInBaza10 = 0;
+
+            
+
+            return numarInBaza10;
+        }
+
+        // Converteste un numar din baza b in baza 10
+        static double ConvertBazaBInBaza10(int bazaB, string numarInBazaB)
+        {   
+            /*
             // Converteste partea fractionara a numarului
             double putereBDouble = 1.0/10; 
             for (int i = pozVirgula+1; i < nrB.Length; i++)
@@ -95,10 +105,20 @@ namespace Conversii
                     nr10 += (nrB[i] - valoareDeScazutCifra) * putereBDouble;
 
                 putereBDouble /= 10;
-            }
+            }*/
 
-            Console.WriteLine(nr10);
-            return nr10;
+            // Cauta indexul virgulei in sirul de caractere al numarului din baza B
+            int pozitieVirgula = numarInBazaB.IndexOf('.');
+            if (pozitieVirgula == -1)
+                pozitieVirgula = numarInBazaB.IndexOf(',');
+
+            // Separa partea intreaga de partea fractionara
+            string parteIntreagaB = numarInBazaB.Substring(0, pozitieVirgula-1);
+            string parteFractionaraB = numarInBazaB.Substring(pozitieVirgula+1);
+            
+            
+
+            
         }
 
 
