@@ -103,7 +103,11 @@ namespace Conversii
         /// 
         static double Divide(double numarator, double numitor)
         {
+            double rez = 0;
 
+            //
+
+            return rez;
         }
 
         /// <summary> Converteste partea fractionara a unui numar din baza b in baza 10 </summary>
