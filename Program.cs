@@ -98,14 +98,21 @@ namespace Conversii
             return numarInBaza10;
         }
 
-        // Efectuarea unei fractii (+ fractie periodica)
-        /// <summary> Efectueaza o fractie data, cu perioada </summary>
-        /// 
-        static double Divide(double numarator, double numitor)
+        /// <summary> Efectueaza o fractie data, cu perioada daca este cazul</summary>
+        /// <param name="numarator"> Numaratorul fractiei</param>
+        /// <param name="numitor"> Numitorul fractiei</param>
+        /// <returns> Fractia efectuata, sub forma unui string </returns>
+        static string Divide(string numarator, double numitor)
         {
-            double rez = 0;
+            string rez = "0.";
 
-            //
+            // Lista resturilor partiale provenite din impartirea repetata a numaratorului la numitor
+            List<string> resturi = new List<string>();
+            resturi.Add(numarator);
+
+            double rest = -1;
+            bool periodica = false;
+            
 
             return rez;
         }
@@ -119,8 +126,6 @@ namespace Conversii
             double numarInBaza10 = 0;
             double putereB = 1 / baza;
 
-            // TODO: need to keep fractional part as string bcs of letters
-
             for (int i = 0; i < numarInBazaB.Length; i++)
             {
                 int cif;
@@ -128,6 +133,7 @@ namespace Conversii
                     cif = numarInBazaB[i] - valoareDeScazutDinLitera;
                 else
                     cif = numarInBazaB[i] - valoareDeScazutDinCifra;
+
 
                 // TODO: functie care efectueaza (+ fractie periodica)
                 //       cif * putereB => cif / (1 / putereB)
