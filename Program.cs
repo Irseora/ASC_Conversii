@@ -98,21 +98,19 @@ namespace Conversii
             return numarInBaza10;
         }
 
+        // TODO: ???
         /// <summary> Efectueaza o fractie data, cu perioada daca este cazul</summary>
         /// <param name="numarator"> Numaratorul fractiei</param>
         /// <param name="numitor"> Numitorul fractiei</param>
         /// <returns> Fractia efectuata, sub forma unui string </returns>
-        static string Divide(string numarator, double numitor)
+        static string Divide(string numarator, double numitor) // numarator, baza
         {
             string rez = "0.";
 
-            // Lista resturilor partiale provenite din impartirea repetata a numaratorului la numitor
-            List<string> resturi = new List<string>();
-            resturi.Add(numarator);
-
             double rest = -1;
             bool periodica = false;
-            
+
+            List<int> cifre = new List<int>();
 
             return rez;
         }
@@ -124,7 +122,7 @@ namespace Conversii
         static double ConvertBazaBInBaza10Fractionar(int baza, string numarInBazaB)
         {
             double numarInBaza10 = 0;
-            double putereB = 1 / baza;
+            double putereB = 1.0 / baza;
 
             for (int i = 0; i < numarInBazaB.Length; i++)
             {
@@ -134,9 +132,8 @@ namespace Conversii
                 else
                     cif = numarInBazaB[i] - valoareDeScazutDinCifra;
 
-
-                // TODO: functie care efectueaza (+ fractie periodica)
-                //       cif * putereB => cif / (1 / putereB)
+                numarInBaza10 += cif * putereB;
+                // TODO: fractii periodice ???
 
                 putereB /= baza;
             }
@@ -157,14 +154,16 @@ namespace Conversii
             
             double numarInBaza10 = 0;
 
+            // Daca numarul din baza b are parte fractionara
             if (pozitieVirgula != -1)
             {
                 // Separa partea intreaga de partea fractionara
-                string parteIntreagaB = numarInBazaB.Substring(0, pozitieVirgula-1);
+                string parteIntreagaB = numarInBazaB.Substring(0, pozitieVirgula);
                 string parteFractionaraB = numarInBazaB.Substring(pozitieVirgula+1);
 
-                // numarInBaza10 = ConvertBazaBInBaza10Intreg(bazaB, parteIntreagaB) + ConvertBazaBInBaza10Fractionar(bazaB, parteFractionaraB);
+                numarInBaza10 = ConvertBazaBInBaza10Intreg(bazaB, parteIntreagaB) + ConvertBazaBInBaza10Fractionar(bazaB, parteFractionaraB);
             }
+            // Daca numarul din baza b are doar parte intreaga
             else
                 numarInBaza10 = ConvertBazaBInBaza10Intreg(bazaB, numarInBazaB);
 
