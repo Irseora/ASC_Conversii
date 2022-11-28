@@ -6,8 +6,8 @@ namespace Convert
     {
         // Valorile care trebuie scazute din codul ASCII al unei litere, respectiv unei cifre,
         // pentru a obtine valoarea lor numerica
-        const int valoareDeScazutDinLitera = 55;
-        const int valoareDeScazutDinCifra = 48;
+        public const int valoareDeScazutDinLitera = 55;
+        public const int valoareDeScazutDinCifra = 48;
 
         /// <summary> Converteste un numar intreg din baza b in baza 10 </summary>
         /// <param name="baza"> Baza in care este reprezentat numarul intreg </param>

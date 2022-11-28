@@ -50,7 +50,7 @@ namespace Conversii
                 // Daca una din cifrele numarului este >= cu baza, numarul introdus nu apartine bazei date
                 inputCorect = true;
                 for (int i = 0; i < input.Length; i++)
-                    if (input[i] > 'A' && input[i] - valoareDeScazutDinLitera >= baza)
+                    if (input[i] > 'A' && input[i] - Convert.Convert.valoareDeScazutDinLitera >= baza)
                         inputCorect = false;
 
                 // Daca numarul introdus nu a fost corect, afiseaza un mesaj si citeste din nou
@@ -65,7 +65,7 @@ namespace Conversii
             return input;
         }
 
-        /// <summary> Verifica daca numarul dat apartine bazei date, si este un numar </summary>
+        /// <summary> Verifica daca numarul dat apartine bazei date, si este un numar corect introdus </summary>
         /// <param name="numar"> Numarul care trebuie verificat </param>
         /// <param name="baza"> Baza in care ar trebui sa fie numarul dat </param>
         /// <returns> Adevarat daca numarul este corect, fals daca nu </returns>
@@ -78,17 +78,22 @@ namespace Conversii
             {
                 if (numar[i] == '.' || numar[i] == ',')
                 {
+                    // Daca are mai mult de o virgula, este gresit
                     if (nrVirgule == 1)
                         return false;
                     else
                         nrVirgule++;
                 }
+                else if (numar[i] > 'A' && numar[i] < 'F')
+                {
+                    //
+                }
+                else if (numar[i] < '0' || numar[i] > '9')
+                    return false;
             }
 
             return true;
         }
-
-        
 
         // TODO: ???
         /// <summary> Efectueaza o fractie data, cu perioada daca este cazul</summary>
@@ -105,9 +110,7 @@ namespace Conversii
             List<int> cifre = new List<int>();
 
             return rez;
-        }
-
-        
+        }  
 
         static void Main(string[] args)
         {
