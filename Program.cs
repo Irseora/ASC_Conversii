@@ -109,12 +109,19 @@ namespace Conversii
 
         static void Main(string[] args)
         {
+            Console.Clear();
+            Console.WriteLine("Programul converteste un numar real din baza b1 in baza b2.");
+            Console.WriteLine("-----------------------------------------------------------");
+
             int baza1 = CitesteBaza(1);
             int baza2 = CitesteBaza(2);
-            string numarBaza1 = CitesteNumar(baza1);
 
-            double nrBaza10 = Convert.Convert.ConvertBazaBInBaza10(baza1, numarBaza1);
-            Console.WriteLine(nrBaza10);
+            string numarPrimaBaza = CitesteNumar(baza1);
+            double numarBaza10 = Convert.Convert.ConvertBazaBInBaza10(baza1, numarPrimaBaza);
+            string numarADouaBaza = Convert.Convert.ConvertBaza10InBazaB(baza2, numarBaza10);
+
+            Console.WriteLine("-----------------------------------------------------------");
+            Console.WriteLine($"{numarPrimaBaza} ({baza1}) = {numarADouaBaza} ({baza2})");
         }
     }
 }
