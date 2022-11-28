@@ -44,22 +44,11 @@ namespace Conversii
             string input = Console.ReadLine();
 
             // Citeste pana primeste date de intrare corecte
-            bool inputCorect = false;
-            while (!inputCorect)
+            while (!Validate(input, baza))
             {
-                // Daca una din cifrele numarului este >= cu baza, numarul introdus nu apartine bazei date
-                inputCorect = true;
-                for (int i = 0; i < input.Length; i++)
-                    if (input[i] > 'A' && input[i] - Convert.Convert.valoareDeScazutDinLitera >= baza)
-                        inputCorect = false;
-
-                // Daca numarul introdus nu a fost corect, afiseaza un mesaj si citeste din nou
-                if (!inputCorect)
-                {
-                    Console.WriteLine($"\nNumarul introdus nu apartine bazei {baza}.");
-                    Console.Write($"Introduceti un numar din baza {baza}: ");
-                    input = Console.ReadLine();
-                }
+                Console.WriteLine($"\nNumarul introdus nu apartine bazei {baza}.");
+                Console.Write($"Introduceti un numar din baza {baza}: ");
+                input = Console.ReadLine();
             }
 
             return input;
@@ -71,25 +60,31 @@ namespace Conversii
         /// <returns> Adevarat daca numarul este corect, fals daca nu </returns>
         static bool Validate(string numar, int baza)
         {
-            bool corect = true;
-
             int nrVirgule = 0;
             for (int i = 0; i < numar.Length; i++)
             {
                 if (numar[i] == '.' || numar[i] == ',')
                 {
-                    // Daca are mai mult de o virgula, este gresit
+                    // Daca are mai mult de o virgula, numarul este gresit
                     if (nrVirgule == 1)
                         return false;
                     else
                         nrVirgule++;
                 }
-                else if (numar[i] > 'A' && numar[i] < 'F')
+                // Daca una dintre cifre este mai mare sau egala cu baza, numarul este gresit
+                else if ((numar[i] >= '0' && numar[i] <= '9') || (numar[i] >= 'A' && numar[i] <= 'F'))
                 {
-                    //
+                    if (Char.IsDigit(numar[i]))
+                    {
+                        if (numar[i] - Convert.Convert.valoareDeScazutDinCifra >= baza)
+                            return false;
+                    }
+                    else
+                    {
+                        if (numar[i] - Convert.Convert.valoareDeScazutDinLitera >= baza)
+                            return false;
+                    }
                 }
-                else if (numar[i] < '0' || numar[i] > '9')
-                    return false;
             }
 
             return true;
