@@ -1,0 +1,15 @@
+C:\Users\Vivi\Documents\ASC_Conversii\bin\Debug\net6.0\Conversii.exe
+C:\Users\Vivi\Documents\ASC_Conversii\bin\Debug\net6.0\Conversii.deps.json
+C:\Users\Vivi\Documents\ASC_Conversii\bin\Debug\net6.0\Conversii.runtimeconfig.json
+C:\Users\Vivi\Documents\ASC_Conversii\bin\Debug\net6.0\Conversii.dll
+C:\Users\Vivi\Documents\ASC_Conversii\bin\Debug\net6.0\Conversii.pdb
+C:\Users\Vivi\Documents\ASC_Conversii\obj\Debug\net6.0\Conversii.csproj.AssemblyReference.cache
+C:\Users\Vivi\Documents\ASC_Conversii\obj\Debug\net6.0\Conversii.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vivi\Documents\ASC_Conversii\obj\Debug\net6.0\Conversii.AssemblyInfoInputs.cache
+C:\Users\Vivi\Documents\ASC_Conversii\obj\Debug\net6.0\Conversii.AssemblyInfo.cs
+C:\Users\Vivi\Documents\ASC_Conversii\obj\Debug\net6.0\Conversii.csproj.CoreCompileInputs.cache
+C:\Users\Vivi\Documents\ASC_Conversii\obj\Debug\net6.0\Conversii.dll
+C:\Users\Vivi\Documents\ASC_Conversii\obj\Debug\net6.0\refint\Conversii.dll
+C:\Users\Vivi\Documents\ASC_Conversii\obj\Debug\net6.0\Conversii.pdb
+C:\Users\Vivi\Documents\ASC_Conversii\obj\Debug\net6.0\Conversii.genruntimeconfig.cache
+C:\Users\Vivi\Documents\ASC_Conversii\obj\Debug\net6.0\ref\Conversii.dll

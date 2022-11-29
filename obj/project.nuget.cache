@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "0pJOoKQc5WAWJs7le4zxxgNeYju27DqhV8Oe3o1EgfUAwKoTdNLhWjc4mJ4ZH8rn0HluWHebANK+MeRn+7pSdg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Vivi\\Documents\\ASC_Conversii\\ASC_Conversii.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Vivi\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.11\\microsoft.netcore.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\Vivi\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.11\\microsoft.windowsdesktop.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\Vivi\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.11\\microsoft.aspnetcore.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\Vivi\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.11\\microsoft.netcore.app.host.win-x64.6.0.11.nupkg.sha512"
+  ],
+  "logs": []
+}
