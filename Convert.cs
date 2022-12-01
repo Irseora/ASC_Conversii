@@ -2,7 +2,7 @@ using System;
 
 namespace Convert
 {
-    class Convert
+    class BazaBinBaza10
     {
         // Valorile care trebuie scazute din codul numeric al unui caracter
         // pentru a obtine valoarea lui numerica
@@ -13,7 +13,7 @@ namespace Convert
         /// <param name="baza"> Baza in care este reprezentat numarul intreg </param>
         /// <param name="numarInBazaB"> Numarul intreg care va fi convertit in baza 10 </param>
         /// <returns> Valoarea din baza 10 a numarului dat </returns>
-        static int ConvertBazaBInBaza10Intreg(int baza, string numarInBazaB)
+        static int Intreg(int baza, string numarInBazaB)
         {
             int numarInBaza10 = 0;
             int putereB = 1;
@@ -35,7 +35,7 @@ namespace Convert
         /// <param name="baza"> Baza in care este reprezentata partea fractionara data </param>
         /// <param name="numarInBazaB"> Partea fractionara care va fi convertita in baza 10 </param>
         /// <returns> Valoarea din baza 10 a partii fractionare date </returns>
-        static double ConvertBazaBInBaza10Fractionar(int baza, string numarInBazaB)
+        static double Fractionar(int baza, string numarInBazaB)
         {
             double numarInBaza10 = 0;
             double putereB = 1.0 / baza;
@@ -60,7 +60,7 @@ namespace Convert
         /// <param name="bazaB"> Baza in care este reprezentat numarul dat </param>
         /// <param name="numarInBazaB"> Numarul real care va fi convertit </param>
         /// <returns> Valoarea din baza 10 a numarului real dat </returns>
-        public static double ConvertBazaBInBaza10(int bazaB, string numarInBazaB)
+        public static double Convert(int bazaB, string numarInBazaB)
         {
             // Cauta indexul virgulei (sau punctului) in sirul de caractere al numarului din baza B
             int pozitieVirgula = numarInBazaB.IndexOf('.');
@@ -74,18 +74,21 @@ namespace Convert
                 string parteIntreagaB = numarInBazaB.Substring(0, pozitieVirgula);
                 string parteFractionaraB = numarInBazaB.Substring(pozitieVirgula+1);
 
-                return ConvertBazaBInBaza10Intreg(bazaB, parteIntreagaB) + ConvertBazaBInBaza10Fractionar(bazaB, parteFractionaraB);
+                return Intreg(bazaB, parteIntreagaB) + Fractionar(bazaB, parteFractionaraB);
             }
             // Daca numarul din baza b are doar parte intreaga
             else
-                return ConvertBazaBInBaza10Intreg(bazaB, numarInBazaB);
+                return Intreg(bazaB, numarInBazaB);
         }
+    }
 
+    class Baza10InBazaB
+    {
         /// <summary> Converteste un numar intreg din baza 10 in baza b </summary>
         /// <param name="baza"> Baza tinta in care trebuie convertit numarul intreg </param>
         /// <param name="numarInBazaB"> Numarul intreg care va fi convertit </param>
         /// <returns> Valoarea din baza data a numarului dat </returns>
-        static string ConvertBaza10InBazaBIntreg(int bazaB, int numarInBaza10)
+        static string Intreg(int bazaB, int numarInBaza10)
         {
             string numarInBazaB = "";
 
@@ -103,7 +106,7 @@ namespace Convert
         /// <param name="baza"> Baza in care trebuie convertita partea fractionara data </param>
         /// <param name="numarInBazaB"> Partea fractionara care va fi convertita </param>
         /// <returns> Valoarea din baza b a partii fractionare date </returns>
-        static string ConvertBaza10InBazaBFractionar(int bazaB, double numarInBaza10)
+        static string Fractionar(int bazaB, double numarInBaza10)
         {
             string numarInbazaB = "";
 
@@ -123,7 +126,7 @@ namespace Convert
         /// <param name="bazaB"> Baza tinta in care trebuie convertit numarul dat </param>
         /// <param name="numarInBaza10"> Numarul care va fi convertit </param> 
         /// <returns> Valoarea din baza b a numarului real dat </param>
-        public static string ConvertBaza10InBazaB(int bazaB, double numarInBaza10)
+        public static string Convert(int bazaB, double numarInBaza10)
         {
             if (bazaB == 10)
                 return numarInBaza10.ToString();
@@ -134,17 +137,16 @@ namespace Convert
             // Daca numarul din baza 10 are si parte fractionara
             if (parteFractionaraBaza10 != 0)
             {
-                string parteIntreagaBazaB = ConvertBaza10InBazaBIntreg(bazaB, (int)numarInBaza10);
-                string parteFractionaraBazaB = ConvertBaza10InBazaBFractionar(bazaB, numarInBaza10);
+                string parteIntreagaBazaB = Intreg(bazaB, (int)numarInBaza10);
+                string parteFractionaraBazaB = Fractionar(bazaB, numarInBaza10);
 
                 return parteIntreagaBazaB + '.' + parteFractionaraBazaB;
             }
             // Daca numarul din baza 10 are doar parte intreaga
             else
             {
-                return ConvertBaza10InBazaBIntreg(bazaB, (int)numarInBaza10);
+                return Intreg(bazaB, (int)numarInBaza10);
             }
         }
-
     }
 }

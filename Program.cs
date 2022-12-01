@@ -76,12 +76,12 @@ namespace Conversii
                 {
                     if (Char.IsDigit(numar[i]))
                     {
-                        if (numar[i] - Convert.Convert.valoareDeScazutDinCifra >= baza)
+                        if (numar[i] - Convert.BazaBinBaza10.valoareDeScazutDinCifra >= baza)
                             return false;
                     }
                     else
                     {
-                        if (numar[i] - Convert.Convert.valoareDeScazutDinLitera >= baza)
+                        if (numar[i] - Convert.BazaBinBaza10.valoareDeScazutDinLitera >= baza)
                             return false;
                     }
                 }
@@ -89,23 +89,6 @@ namespace Conversii
 
             return true;
         }
-
-        // TODO: ???
-        /// <summary> Efectueaza o fractie data, cu perioada daca este cazul</summary>
-        /// <param name="numarator"> Numaratorul fractiei</param>
-        /// <param name="numitor"> Numitorul fractiei</param>
-        /// <returns> Fractia efectuata, sub forma unui string </returns>
-        static string Divide(string numarator, double numitor) // numarator, baza
-        {
-            string rez = "0.";
-
-            double rest = -1;
-            bool periodica = false;
-
-            List<int> cifre = new List<int>();
-
-            return rez;
-        }  
 
         static void Main(string[] args)
         {
@@ -117,8 +100,8 @@ namespace Conversii
             int baza2 = CitesteBaza(2);
 
             string numarPrimaBaza = CitesteNumar(baza1);
-            double numarBaza10 = Convert.Convert.ConvertBazaBInBaza10(baza1, numarPrimaBaza);
-            string numarADouaBaza = Convert.Convert.ConvertBaza10InBazaB(baza2, numarBaza10);
+            double numarBaza10 = Convert.BazaBinBaza10.Convert(baza1, numarPrimaBaza);
+            string numarADouaBaza = Convert.Baza10InBazaB.Convert(baza2, numarBaza10);
 
             Console.WriteLine("-----------------------------------------------------------");
             Console.WriteLine($"{numarPrimaBaza} ({baza1}) = {numarADouaBaza} ({baza2})");

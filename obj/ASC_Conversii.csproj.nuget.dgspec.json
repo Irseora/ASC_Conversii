@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Vivi\\Documents\\ASC_Conversii\\ASC_Conversii.csproj": {}
+    "C:\\Users\\Vivi\\Documents\\C#\\Conversii\\ASC_Conversii.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Vivi\\Documents\\ASC_Conversii\\ASC_Conversii.csproj": {
+    "C:\\Users\\Vivi\\Documents\\C#\\Conversii\\ASC_Conversii.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Vivi\\Documents\\ASC_Conversii\\ASC_Conversii.csproj",
+        "projectUniqueName": "C:\\Users\\Vivi\\Documents\\C#\\Conversii\\ASC_Conversii.csproj",
         "projectName": "ASC_Conversii",
-        "projectPath": "C:\\Users\\Vivi\\Documents\\ASC_Conversii\\ASC_Conversii.csproj",
+        "projectPath": "C:\\Users\\Vivi\\Documents\\C#\\Conversii\\ASC_Conversii.csproj",
         "packagesPath": "C:\\Users\\Vivi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Vivi\\Documents\\ASC_Conversii\\obj\\",
+        "outputPath": "C:\\Users\\Vivi\\Documents\\C#\\Conversii\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Vivi\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,35 +43,16 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.11, 6.0.11]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.11, 6.0.11]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.11, 6.0.11]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.11, 6.0.11]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
