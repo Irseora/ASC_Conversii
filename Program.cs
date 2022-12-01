@@ -105,6 +105,9 @@ namespace Conversii
 
             Console.WriteLine("-----------------------------------------------------------");
             Console.WriteLine($"{numarPrimaBaza} ({baza1}) = {numarADouaBaza} ({baza2})");
+
+            Console.Write($"{Environment.NewLine}Apasati orice tasta pentru a inchide programul...");
+            Console.ReadKey();
         }
     }
 }
